@@ -23,4 +23,4 @@ jobs:
             docker build . -f Dockerfile -t odoomaroc/docker/13.0/nOdoo:latest
         - name: push the docker image
           id: push-docker-image
-          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/nOdoo:latest
+          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/nodoo:13.0
