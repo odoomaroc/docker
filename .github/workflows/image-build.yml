@@ -21,7 +21,7 @@ jobs:
           run: |
             cd ./13.0 
             ls -la 
-            docker build . -f Dockerfile -t odoomaroc/nodoo:latest
+            docker build . -f Dockerfile -t odoomaroc/nodoo:13.0
         - name: push the docker image
           id: push-docker-image
           run: |
