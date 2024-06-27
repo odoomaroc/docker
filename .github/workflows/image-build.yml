@@ -22,9 +22,12 @@ jobs:
             cd ./13.0 
             ls -la 
             docker build . -f Dockerfile -t odoomaroc/nodoo:13.0
+            ls -latp
         - name: push the docker image
           id: push-docker-image
           run: |
+            ls -la
             cd ./13.0
+            ls -la
             docker push nabima/nodoo:13.0
           
