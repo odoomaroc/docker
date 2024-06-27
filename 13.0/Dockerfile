@@ -6,7 +6,9 @@ SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 # Generate locale C.UTF-8 for postgres and general locale data
 ENV LANG C.UTF-8
 COPY ./requirements.txt /
-RUN python3 -m pip install -U pip && python3 -m pip install -r requirements.txt && python3 -m pip install translate docxtpl lxml==4.3.2
+RUN python3 -m pip install -U pip \
+        && python3 -m pip install -r /requirements.txt \
+        && python3 -m pip install translate docxtpl lxml==4.3.2
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 RUN apt-get update \
         && apt-get install -y --no-install-recommends \
