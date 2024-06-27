@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 COPY ./requirements.txt /
 RUN apt-get update \
         && apt-get install -y --no-install-recommends \ 
-                python3-pip \
+                python3-pip 
         
 RUN python3 -m pip install -U pip 
 RUN python3 -m pip install translate docxtpl lxml==4.3.2
