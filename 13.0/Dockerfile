@@ -6,6 +6,10 @@ SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 # Generate locale C.UTF-8 for postgres and general locale data
 ENV LANG C.UTF-8
 COPY ./requirements.txt /
+RUN apt-get update \
+        && apt-get install -y --no-install-recommends \ 
+                python3-pip \
+        
 RUN python3 -m pip install -U pip 
 RUN python3 -m pip install translate docxtpl lxml==4.3.2
 RUN python3 -m pip install -r /requirements.txt 
@@ -22,7 +26,7 @@ RUN apt-get update \
             node-less \
             npm \
             python3-num2words \
-            python3-pip \
+            
             python3-phonenumbers \
             python3-pyldap \
             python3-qrcode \
